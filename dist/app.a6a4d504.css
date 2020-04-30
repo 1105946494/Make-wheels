@@ -5,6 +5,10 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
 .g-button[data-v-e78980]:hover {
   border-color: var(--border-color-hover);
@@ -14,4 +18,19 @@
 }
 .g-button[data-v-e78980]:focus {
   outline: none;
+}
+.g-button > .icon[data-v-e78980] {
+  margin-right: 0.1em;
+  order: 1;
+}
+.g-button > .content[data-v-e78980] {
+  order: 2;
+}
+.g-button.icon-right > .icon[data-v-e78980] {
+  margin-right: 0em;
+  margin-left: 0.1em;
+  order: 2;
+}
+.g-button.icon-right > .content[data-v-e78980] {
+  order: 1;
 }
