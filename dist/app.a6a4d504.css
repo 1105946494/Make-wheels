@@ -1,3 +1,14 @@
+@keyframes spin-data-v-e78980 {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.loading[data-v-e78980] {
+  animation: spin-data-v-e78980 2s infinite linear;
+}
 .g-button[data-v-e78980] {
   font-size: var(--font-size);
   height: var(--button-height);
