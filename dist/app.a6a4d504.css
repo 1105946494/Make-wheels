@@ -1,3 +1,7 @@
+.g-icon[data-v-0a643c] {
+  width: 1em;
+  height: 1em;
+}
 @keyframes spin-data-v-e78980 {
 0% {
     transform: rotate(0deg);
@@ -44,10 +48,6 @@
 }
 .g-button.icon-right > .content[data-v-e78980] {
   order: 1;
-}
-.g-icon[data-v-0a643c] {
-  width: 1em;
-  height: 1em;
 }
 .g-button-group[data-v-295ada] {
   display: inline-flex;
