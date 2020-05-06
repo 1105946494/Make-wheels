@@ -71,3 +71,39 @@
   position: relative;
   z-index: 1;
 }
+.wrapper[data-v-e3a6cf] {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+.wrapper[data-v-e3a6cf] > :not(:last-child) {
+  margin-right: 0.5em;
+}
+.wrapper > input[data-v-e3a6cf] {
+  height: 32px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: inherit;
+}
+.wrapper > input[data-v-e3a6cf]:hover {
+  border-color: #666;
+}
+.wrapper > input[data-v-e3a6cf]:focus {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+.wrapper > input[data-v-e3a6cf]:disabled, .wrapper > input[data-v-e3a6cf]:read-only {
+  border-color: #bbb;
+  color: #bbb;
+  cursor: not-allowed;
+}
+.wrapper.error > input[data-v-e3a6cf] {
+  border-color: #f1453d;
+}
+.wrapper .icon-error[data-v-e3a6cf] {
+  fill: red;
+}
+.wrapper .errorMessage[data-v-e3a6cf] {
+  color: #f1453d;
+}
