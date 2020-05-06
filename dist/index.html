@@ -37,7 +37,8 @@
         <g-input value="王五"></g-input>
       </div>
       <div class="box">
-        <g-input value="丙七" @change="inputChang"></g-input>
+        <g-input v-model="message"></g-input>
+        <p>{{message}}</p>
       </div>
       <div class="box">
         <g-input value="丁六" error="姓名不能少于两个字"></g-input>
