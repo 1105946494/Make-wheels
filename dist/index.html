@@ -30,7 +30,40 @@
       }</style>
   <link rel="stylesheet" href="/app.a6a4d504.css"></head>
   <body>
+    <style>.row {
+        display: flex;
+      }
+      .col {
+        border: 1px solid red;
+        height: 100px;
+        background: gray;
+        width: 50%;
+      }</style>
     <div id="app">
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+      </g-row>
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>2</g-col>
+      </g-row>
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>2</g-col>
+        <g-col>2</g-col>
+      </g-row>
+      <g-row>
+        <g-col :span="2">11</g-col>
+        <g-col :span="22">22</g-col>
+      </g-row>
+      <g-row>
+        <g-col :span="4">11</g-col>
+        <g-col :span="20">22</g-col>
+      </g-row>
+      <hr>
       <div class="box">
         <g-input value="张三" :disabled="true"></g-input>
         <g-input value="李四" :readonly="true"></g-input>

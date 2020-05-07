@@ -107,3 +107,83 @@
 .wrapper .errorMessage[data-v-e3a6cf] {
   color: #f1453d;
 }
+.row[data-v-a8e047] {
+  display: flex;
+}
+.col[data-v-21f02c] {
+  height: 100px;
+  background: grey;
+  width: 50%;
+}
+.col.col-1[data-v-21f02c] {
+  width: 4.1666666667%;
+}
+.col.col-2[data-v-21f02c] {
+  width: 8.3333333333%;
+}
+.col.col-3[data-v-21f02c] {
+  width: 12.5%;
+}
+.col.col-4[data-v-21f02c] {
+  width: 16.6666666667%;
+}
+.col.col-5[data-v-21f02c] {
+  width: 20.8333333333%;
+}
+.col.col-6[data-v-21f02c] {
+  width: 25%;
+}
+.col.col-7[data-v-21f02c] {
+  width: 29.1666666667%;
+}
+.col.col-8[data-v-21f02c] {
+  width: 33.3333333333%;
+}
+.col.col-9[data-v-21f02c] {
+  width: 37.5%;
+}
+.col.col-10[data-v-21f02c] {
+  width: 41.6666666667%;
+}
+.col.col-11[data-v-21f02c] {
+  width: 45.8333333333%;
+}
+.col.col-12[data-v-21f02c] {
+  width: 50%;
+}
+.col.col-13[data-v-21f02c] {
+  width: 54.1666666667%;
+}
+.col.col-14[data-v-21f02c] {
+  width: 58.3333333333%;
+}
+.col.col-15[data-v-21f02c] {
+  width: 62.5%;
+}
+.col.col-16[data-v-21f02c] {
+  width: 66.6666666667%;
+}
+.col.col-17[data-v-21f02c] {
+  width: 70.8333333333%;
+}
+.col.col-18[data-v-21f02c] {
+  width: 75%;
+}
+.col.col-19[data-v-21f02c] {
+  width: 79.1666666667%;
+}
+.col.col-20[data-v-21f02c] {
+  width: 83.3333333333%;
+}
+.col.col-21[data-v-21f02c] {
+  width: 87.5%;
+}
+.col.col-22[data-v-21f02c] {
+  width: 91.6666666667%;
+}
+.col.col-23[data-v-21f02c] {
+  width: 95.8333333333%;
+}
+.col.col-24[data-v-21f02c] {
+  width: 100%;
+}
