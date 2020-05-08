@@ -110,8 +110,14 @@
 .row[data-v-a8e047] {
   display: flex;
 }
-.col[data-v-21f02c] {
-  width: 50%;
+.row.align-left[data-v-a8e047] {
+  justify-content: flex-start;
+}
+.row.align-right[data-v-a8e047] {
+  justify-content: flex-end;
+}
+.row.align-center[data-v-a8e047] {
+  justify-content: center;
 }
 .col.col-1[data-v-21f02c] {
   width: 4.1666666667%;
