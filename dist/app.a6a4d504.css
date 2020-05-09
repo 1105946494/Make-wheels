@@ -852,10 +852,25 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 }
 .layout.hasSider[data-v-bc4ee4] {
   flex-direction: row;
+}
+.sider[data-v-2108d3] {
+  position: relative;
+}
+.sider > button[data-v-2108d3] {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.slide-enter-active[data-v-2108d3],
+.slide-leave-active[data-v-2108d3] {
+  transition: all 0.3s;
+}
+.slide-enter[data-v-2108d3],
+.slide-leave-to[data-v-2108d3] {
+  margin-left: -200px;
 }
 .content[data-v-c2104e] {
   flex-grow: 1;
