@@ -20,67 +20,27 @@
         --border-color: #999;
         --border-color-hover: #666;
       }
-      #app {
-        margin: 20px;
-      }
       body {
         font-size: var(--font-size);
       }
     </style>
     <style>
-      .box {
-        margin: 20px;
-      }
       .demo {
-        background: #ddd;
         border: 1px solid #666;
-        height: 100px;
+        min-height: 100px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <g-row gutter="20">
-        <g-col span="12"></g-col>
-        <g-col span="12"></g-col>
-      </g-row>
-      <hr />
-      <div class="box">
-        <g-input value="张三" :disabled="true"></g-input>
-        <g-input value="李四" :readonly="true"></g-input>
-        <g-input value="王五"></g-input>
-      </div>
-      <div class="box">
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
-      </div>
-      <div class="box">
-        <g-input value="丁六" error="姓名不能少于两个字"></g-input>
-      </div>
-      <div class="box">
-        <g-button :loading="loading1" @click="loading1=!loading1">
-          按钮
-        </g-button>
-        <g-button
-          icon="ishezhi"
-          :loading="loading2"
-          @click="loading2=!loading2"
-        >
-          按钮
-        </g-button>
-        <g-button
-          icon="ishezhi"
-          icon-position="right"
-          :loading="loading3"
-          @click="loading3=!loading3"
-        >
-          按钮
-        </g-button>
-        <g-button-group>
-          <g-button icon="izuo">上一页</g-button>
-          <g-button icon="iyou" icon-position="right">下一页</g-button>
-        </g-button-group>
-      </div>
+      <g-layout style="height: 100vh;">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+          <g-header class="demo">header</g-header>
+          <g-content class="demo">content</g-content>
+          <g-footer class="demo">footer</g-footer>
+        </g-layout>
+      </g-layout>
     </div>
     <script src="./src/app.js"></script>
   </body>
