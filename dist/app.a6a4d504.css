@@ -875,3 +875,19 @@
 .content[data-v-c2104e] {
   flex-grow: 1;
 }
+.toast[data-v-49d944] {
+  font-size: 14px;
+  height: 40px;
+  line-height: 1.8;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  color: white;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  padding: 0 16px;
+}
