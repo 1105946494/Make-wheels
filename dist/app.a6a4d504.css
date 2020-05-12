@@ -875,7 +875,7 @@
 .content[data-v-c2104e] {
   flex-grow: 1;
 }
-@keyframes fade-in-data-v-49d944 {
+@keyframes slide-up-data-v-49d944 {
 0% {
     opacity: 0;
     transform: translateY(100%);
@@ -885,13 +885,57 @@
     transform: translateY(0%);
 }
 }
+@keyframes slide-down-data-v-49d944 {
+0% {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0%);
+}
+}
+@keyframes fade-in-data-v-49d944 {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+.wrapper[data-v-49d944] {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wrapper.position-top[data-v-49d944] {
+  top: 0;
+}
+.wrapper.position-top .toast[data-v-49d944] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  animation: slide-down-data-v-49d944 0.5s;
+}
+.wrapper.position-bottom[data-v-49d944] {
+  bottom: 0;
+}
+.wrapper.position-bottom .toast[data-v-49d944] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  animation: slide-up-data-v-49d944 0.5s;
+}
+.wrapper.position-middle[data-v-49d944] {
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
+}
+.wrapper.position-middle .toast[data-v-49d944] {
+  animation: fade-in-data-v-49d944 0.5s;
+}
 .toast[data-v-49d944] {
   animation: fade-in-data-v-49d944 1s;
   font-size: 14px;
   min-height: 40px;
   line-height: 1.8;
-  position: fixed;
-  left: 50%;
   display: flex;
   color: white;
   align-items: center;
@@ -911,16 +955,4 @@
   height: 100%;
   border-left: 1px solid #666;
   margin-left: 16px;
-}
-.toast.position-top[data-v-49d944] {
-  top: 0;
-  transform: translateX(-50%);
-}
-.toast.position-button[data-v-49d944] {
-  bottom: 0;
-  transform: translateX(-50%);
-}
-.toast.position-middle[data-v-49d944] {
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
