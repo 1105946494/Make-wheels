@@ -877,7 +877,7 @@
 }
 .toast[data-v-49d944] {
   font-size: 14px;
-  height: 40px;
+  min-height: 40px;
   line-height: 1.8;
   position: fixed;
   top: 0;
@@ -890,4 +890,16 @@
   border-radius: 4px;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
   padding: 0 16px;
+}
+.toast .message[data-v-49d944] {
+  padding: 8px 0;
+}
+.toast .close[data-v-49d944] {
+  padding-left: 16px;
+  flex-shrink: 0;
+}
+.toast .line[data-v-49d944] {
+  height: 100%;
+  border-left: 1px solid #666;
+  margin-left: 16px;
 }

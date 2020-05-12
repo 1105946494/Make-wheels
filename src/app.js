@@ -12,6 +12,9 @@ import Content from "./content";
 import Footer from "./footer";
 import Toast from "./toast";
 import Plugin from "./plugin";
+import createElement from "vue";
+
+const h = createElement;
 
 Vue.component("g-button", Button);
 Vue.component("g-icon", Icon);
@@ -35,9 +38,9 @@ new Vue({
     loading3: false,
     message: "hi",
   },
-  methods: {
-    showToast() {
-      this.$toast("我是你爸爸");
-    },
+  created() {
+    this.$toast("文字", {
+      enableHtml: false,
+    });
   },
 });

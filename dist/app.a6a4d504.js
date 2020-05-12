@@ -13517,8 +13517,69 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
-  name: "GuluToast"
+  name: "GuluToast",
+  props: {
+    autoClose: {
+      type: Boolean,
+      default: true
+    },
+    autoCloseDelay: {
+      type: Number,
+      default: 3
+    },
+    closeButton: {
+      type: Object,
+      default: function _default() {
+        return {
+          text: "关闭",
+          callback: undefined
+        };
+      }
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false
+    }
+  },
+  mounted: function mounted() {
+    this.updateStyles();
+    this.execAutoClose();
+  },
+  methods: {
+    updateStyles: function updateStyles() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        _this.$refs.line.style.height = "".concat(_this.$refs.wrapper.getBoundingClientRect().height, "px");
+      });
+    },
+    execAutoClose: function execAutoClose() {
+      var _this2 = this;
+
+      if (this.autoClose) {
+        setTimeout(function () {
+          _this2.close();
+        }, this.autoCloseDelay * 1000);
+      }
+    },
+    close: function close() {
+      this.$el.remove();
+      this.$destroy();
+    },
+    onClickClose: function onClickClose() {
+      this.close();
+
+      if (this.closeButton && typeof this.closeButton.callback === "function") {
+        this.closeButton.callback(this);
+      }
+    }
+  }
 };
 exports.default = _default;
         var $49d944 = exports.default || module.exports;
@@ -13533,7 +13594,28 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "toast" }, [_vm._t("default")], 2)
+  return _c("div", { ref: "wrapper", staticClass: "toast" }, [
+    _c(
+      "div",
+      { staticClass: "message" },
+      [
+        !_vm.enableHtml
+          ? _vm._t("default")
+          : _c("div", {
+              domProps: { innerHTML: _vm._s(_vm.$slots.default[0]) }
+            })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { ref: "line", staticClass: "line" }),
+    _vm._v(" "),
+    _vm.closeButton
+      ? _c("span", { staticClass: "close", on: { click: _vm.onClickClose } }, [
+          _vm._v(_vm._s(_vm.closeButton.text))
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13582,9 +13664,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = {
   install: function install(Vue, options) {
-    Vue.prototype.$toast = function (message) {
+    Vue.prototype.$toast = function (message, toastOptions) {
       var Constructor = Vue.extend(_toast.default);
-      var toast = new Constructor();
+      var toast = new Constructor({
+        propsData: toastOptions
+      });
       toast.$slots.default = [message];
       toast.$mount();
       document.body.appendChild(toast.$el);
@@ -13625,6 +13709,8 @@ var _plugin = _interopRequireDefault(require("./plugin"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var h = _vue.default;
+
 _vue.default.component("g-button", _button.default);
 
 _vue.default.component("g-icon", _icon.default);
@@ -13659,10 +13745,10 @@ new _vue.default({
     loading3: false,
     message: "hi"
   },
-  methods: {
-    showToast: function showToast() {
-      this.$toast("我是你爸爸");
-    }
+  created: function created() {
+    this.$toast("文字", {
+      enableHtml: false
+    });
   }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout":"src/layout.vue","./header":"src/header.vue","./sider":"src/sider.vue","./content":"src/content.vue","./footer":"src/footer.vue","./toast":"src/toast.vue","./plugin":"src/plugin.js"}],"../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -13693,7 +13779,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52323" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54799" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
