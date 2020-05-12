@@ -60,8 +60,7 @@ new Vue({
               console.log("哦");
             },
           },
-          autoClose: false,
-          autoCloseDelay: 3,
+          autoClose: 3,
         }
       );
     },

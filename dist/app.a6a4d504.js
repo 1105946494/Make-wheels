@@ -13531,12 +13531,11 @@ var _default = {
   name: "GuluToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 3
+      type: [Boolean, Number],
+      default: 5,
+      validator: function validator(value) {
+        return value === false || typeof value === "number";
+      }
     },
     closeButton: {
       type: Object,
@@ -13582,7 +13581,7 @@ var _default = {
       if (this.autoClose) {
         setTimeout(function () {
           _this2.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     close: function close() {
@@ -13810,8 +13809,7 @@ new _vue.default({
             console.log("哦");
           }
         },
-        autoClose: false,
-        autoCloseDelay: 3
+        autoClose: 3
       });
     }
   }
