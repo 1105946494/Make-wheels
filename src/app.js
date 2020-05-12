@@ -40,7 +40,16 @@ new Vue({
   },
   created() {
     this.$toast("文字", {
+      position: "top",
       enableHtml: false,
+      closeButton: {
+        text: "啥？",
+        callback() {
+          console.log("哦");
+        },
+      },
+      autoClose: false,
+      autoCloseDelay: 3,
     });
   },
 });

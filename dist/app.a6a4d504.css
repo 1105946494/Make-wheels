@@ -880,9 +880,7 @@
   min-height: 40px;
   line-height: 1.8;
   position: fixed;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
   color: white;
   align-items: center;
@@ -902,4 +900,16 @@
   height: 100%;
   border-left: 1px solid #666;
   margin-left: 16px;
+}
+.toast.position-top[data-v-49d944] {
+  top: 0;
+  transform: translateX(-50%);
+}
+.toast.position-button[data-v-49d944] {
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.toast.position-middle[data-v-49d944] {
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
