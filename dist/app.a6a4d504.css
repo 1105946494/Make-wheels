@@ -875,7 +875,18 @@
 .content[data-v-c2104e] {
   flex-grow: 1;
 }
+@keyframes fade-in-data-v-49d944 {
+0% {
+    opacity: 0;
+    transform: translateY(100%);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0%);
+}
+}
 .toast[data-v-49d944] {
+  animation: fade-in-data-v-49d944 1s;
   font-size: 14px;
   min-height: 40px;
   line-height: 1.8;
