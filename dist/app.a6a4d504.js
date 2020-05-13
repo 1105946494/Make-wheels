@@ -13734,7 +13734,37 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: "TabsPane"
+  name: "TabsPane",
+  inject: ["eventBus"],
+  props: {
+    name: {
+      type: [String, Number],
+      required: true
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        active: this.active
+      };
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    this.eventBus.$on("update:selected", function (name) {
+      if (name === _this.name) {
+        _this.active = true;
+      } else {
+        _this.active = false;
+      }
+    });
+  }
 };
 exports.default = _default;
         var $4904ad = exports.default || module.exports;
@@ -13749,7 +13779,14 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tabs-pane" }, [_vm._t("default")], 2)
+  return _vm.active
+    ? _c(
+        "div",
+        { staticClass: "tabs-pane", class: _vm.classes },
+        [_vm._t("default")],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13799,10 +13836,43 @@ exports.default = void 0;
 //
 var _default = {
   name: "TabsItem",
+  inject: ["eventBus"],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
   props: {
     disabled: {
       type: Boolean,
       default: false
+    },
+    name: {
+      type: [String, Number],
+      required: true
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        active: this.active
+      };
+    }
+  },
+  created: function created() {
+    var _this = this;
+
+    this.eventBus.$on("update:selected", function (name) {
+      if (name === _this.name) {
+        _this.active = true;
+      } else {
+        _this.active = false;
+      }
+    });
+  },
+  methods: {
+    xxx: function xxx() {
+      this.eventBus.$emit("update:selected", this.name);
     }
   }
 };
@@ -13819,7 +13889,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tabs-item" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "tabs-item", class: _vm.classes, on: { click: _vm.xxx } },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13868,8 +13943,11 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
-  name: "TabsHead"
+  name: "TabsHead",
+  inject: ["eventBus"]
 };
 exports.default = _default;
         var $b1db87 = exports.default || module.exports;
@@ -13887,7 +13965,11 @@ exports.default = _default;
   return _c(
     "div",
     { staticClass: "tabs-head" },
-    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
+    ],
     2
   )
 }
@@ -13938,7 +14020,8 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: "TabsBody"
+  name: "TabsBody",
+  inject: ["eventBus"]
 };
 exports.default = _default;
         var $2cd0e1 = exports.default || module.exports;
@@ -13995,6 +14078,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _vue = _interopRequireDefault(require("vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -14016,7 +14104,18 @@ var _default = {
       }
     }
   },
-  created: function created() {// this.$emit("update:selected", "xxx");
+  data: function data() {
+    return {
+      eventBus: new _vue.default()
+    };
+  },
+  provide: function provide() {
+    return {
+      eventBus: this.eventBus
+    };
+  },
+  mounted: function mounted() {
+    this.eventBus.$emit("update:selected", this.selected); // this.$emit("update:selected", "xxx");
   }
 };
 exports.default = _default;
@@ -14067,7 +14166,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
