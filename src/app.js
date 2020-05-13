@@ -13,6 +13,11 @@ import Footer from "./footer";
 import Toast from "./toast";
 import Plugin from "./plugin";
 import createElement from "vue";
+import TabsPane from "./tabs-pane";
+import TabsItem from "./tabs-item";
+import TabsHead from "./tabs-head";
+import TabsBody from "./tabs-body";
+import Tabs from "./tabs";
 
 const h = createElement;
 
@@ -29,14 +34,16 @@ Vue.component("g-footer", Footer);
 Vue.component("g-sider", Sider);
 Vue.component("g-toast", Toast);
 Vue.use(Plugin);
+Vue.component("g-tabs", Tabs);
+Vue.component("g-tabs-body", TabsBody);
+Vue.component("g-tabs-head", TabsHead);
+Vue.component("g-tabs-item", TabsItem);
+Vue.component("g-tabs-pane", TabsPane);
 
 new Vue({
   el: "#app",
   data: {
-    loading1: false,
-    loading2: true,
-    loading3: false,
-    message: "hi",
+    selectedTab: "sports",
   },
   methods: {
     showToast1() {
