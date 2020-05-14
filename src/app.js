@@ -43,7 +43,7 @@ Vue.component("g-tabs-pane", TabsPane);
 new Vue({
   el: "#app",
   data: {
-    selectedTab: "sports",
+    selectedTab: "finance",
   },
   methods: {
     showToast1() {

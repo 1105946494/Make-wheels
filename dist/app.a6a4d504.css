@@ -974,6 +974,7 @@
 }
 .tabs-item.disabled[data-v-70a2ab] {
   color: grey;
+  cursor: not-allowed;
 }
 .tabs-head[data-v-b1db87] {
   display: flex;

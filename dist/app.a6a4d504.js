@@ -13863,13 +13863,15 @@ var _default = {
   created: function created() {
     var _this = this;
 
-    this.eventBus.$on("update:selected", function (name) {
-      if (name === _this.name) {
-        _this.active = true;
-      } else {
-        _this.active = false;
-      }
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", function (name) {
+        if (name === _this.name) {
+          _this.active = true;
+        } else {
+          _this.active = false;
+        }
+      });
+    }
   },
   methods: {
     onClick: function onClick() {
@@ -13877,7 +13879,8 @@ var _default = {
         return;
       }
 
-      this.eventBus.$emit("update:selected", this.name, this);
+      this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
+      this.$emit("click", this);
     }
   }
 };
@@ -13899,6 +13902,7 @@ exports.default = _default;
     {
       staticClass: "tabs-item",
       class: _vm.classes,
+      attrs: { "data-name": _vm.name },
       on: { click: _vm.onClick }
     },
     [_vm._t("default")],
@@ -14143,6 +14147,10 @@ var _default = {
   mounted: function mounted() {
     var _this = this;
 
+    if (this.$children.length === 0) {
+      console && console.warn && console.warn("tabs的子组件应该是tabs-head和tabs-nav，但你没有写子组件");
+    }
+
     this.$children.forEach(function (vm) {
       if (vm.$options.name === "TabsHead") {
         vm.$children.forEach(function (childVm) {
@@ -14286,7 +14294,7 @@ _vue.default.component("g-tabs-pane", _tabsPane.default);
 new _vue.default({
   el: "#app",
   data: {
-    selectedTab: "sports"
+    selectedTab: "finance"
   },
   methods: {
     showToast1: function showToast1() {
