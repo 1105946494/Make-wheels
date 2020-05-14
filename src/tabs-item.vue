@@ -54,6 +54,7 @@ $blue: blue;
   height: 100%;
   align-items: center;
   display: flex;
+  transition: all 0.5s;
   &.active {
     color: $blue;
     font-weight: bold;
