@@ -956,8 +956,8 @@
   border-left: 1px solid #666;
   margin-left: 16px;
 }
-.tabs-pane.active[data-v-4904ad] {
-  background: red;
+.tabs-pane[data-v-4904ad] {
+  padding: 1em;
 }
 .tabs-item[data-v-70a2ab] {
   flex-shrink: 0;
@@ -977,6 +977,7 @@
   height: 40px;
   justify-content: flex-start;
   position: relative;
+  border-bottom: 1px solid #ddd;
 }
 .tabs-head > .line[data-v-b1db87] {
   position: absolute;
@@ -986,4 +987,8 @@
 }
 .tabs-head > .actions-wrapper[data-v-b1db87] {
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
 }
