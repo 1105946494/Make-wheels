@@ -14226,6 +14226,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "GuluPopover",
   data: function data() {
@@ -14241,6 +14243,17 @@ var _default = {
 
       if (this.visible === true) {
         this.$nextTick(function () {
+          document.body.appendChild(_this.$refs.contentWrapper);
+
+          var _this$$refs$triggerWr = _this.$refs.triggerWrapper.getBoundingClientRect(),
+              width = _this$$refs$triggerWr.width,
+              height = _this$$refs$triggerWr.height,
+              top = _this$$refs$triggerWr.top,
+              left = _this$$refs$triggerWr.left;
+
+          _this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
+          _this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
+
           var eventHandler = function eventHandler() {
             _this.visible = false;
             document.removeEventListener("click", eventHandler);
@@ -14283,6 +14296,7 @@ exports.default = _default;
         ? _c(
             "div",
             {
+              ref: "contentWrapper",
               staticClass: "content-wrapper",
               on: {
                 click: function($event) {
@@ -14295,9 +14309,8 @@ exports.default = _default;
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm._t("default")
-    ],
-    2
+      _c("span", { ref: "triggerWrapper" }, [_vm._t("default")], 2)
+    ]
   )
 }
 var staticRenderFns = []
@@ -14424,6 +14437,9 @@ new _vue.default({
     selectedTab: "finance"
   },
   methods: {
+    yyy: function yyy() {
+      console.log("yyy");
+    },
     showToast1: function showToast1() {
       this.showToast("top");
     },

@@ -48,6 +48,9 @@ new Vue({
     selectedTab: "finance",
   },
   methods: {
+    yyy() {
+      console.log("yyy");
+    },
     showToast1() {
       this.showToast("top");
     },
