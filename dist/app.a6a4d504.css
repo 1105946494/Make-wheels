@@ -1028,10 +1028,12 @@
 }
 .content-wrapper.position-top[data-v-55ceed]::before {
   border-top-color: black;
+  border-bottom: none;
   top: 100%;
 }
 .content-wrapper.position-top[data-v-55ceed]::after {
   border-top-color: white;
+  border-bottom: none;
   top: calc(100% - 1px);
 }
 .content-wrapper.position-bottom[data-v-55ceed] {
@@ -1042,10 +1044,12 @@
 }
 .content-wrapper.position-bottom[data-v-55ceed]::before {
   border-bottom-color: black;
+  border-top: none;
   bottom: 100%;
 }
 .content-wrapper.position-bottom[data-v-55ceed]::after {
   border-bottom-color: white;
+  border-top: none;
   bottom: calc(100% - 1px);
 }
 .content-wrapper.position-left[data-v-55ceed] {
@@ -1058,10 +1062,12 @@
 }
 .content-wrapper.position-left[data-v-55ceed]::before {
   border-left-color: black;
+  border-right: none;
   left: 100%;
 }
 .content-wrapper.position-left[data-v-55ceed]::after {
   border-left-color: white;
+  border-right: none;
   left: calc(100% - 1px);
 }
 .content-wrapper.position-right[data-v-55ceed] {
@@ -1073,9 +1079,11 @@
 }
 .content-wrapper.position-right[data-v-55ceed]::before {
   border-right-color: black;
+  border-left: none;
   right: 100%;
 }
 .content-wrapper.position-right[data-v-55ceed]::after {
   border-right-color: white;
+  border-left: none;
   right: calc(100% - 1px);
 }
