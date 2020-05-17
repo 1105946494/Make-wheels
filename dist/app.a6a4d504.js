@@ -14392,7 +14392,7 @@ exports.default = _default;
             class:
               ((_obj = {}), (_obj["position-" + _vm.position] = true), _obj)
           },
-          [_vm._t("content")],
+          [_vm._t("content", null, { close: _vm.close })],
           2
         )
       : _vm._e(),
