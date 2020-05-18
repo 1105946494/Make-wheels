@@ -14628,7 +14628,12 @@ exports.default = _default;
     ]),
     _vm._v(" "),
     _vm.open
-      ? _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+      ? _c(
+          "div",
+          { ref: "content", staticClass: "content" },
+          [_vm._t("default")],
+          2
+        )
       : _vm._e()
   ])
 }
