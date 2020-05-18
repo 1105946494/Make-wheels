@@ -19,6 +19,8 @@ import TabsHead from "./tabs-head";
 import TabsBody from "./tabs-body";
 import Tabs from "./tabs";
 import Popover from "./popover";
+import Collapse from "./collapse";
+import CollapseItem from "./collapse-item";
 
 const h = createElement;
 
@@ -41,6 +43,8 @@ Vue.component("g-tabs-head", TabsHead);
 Vue.component("g-tabs-item", TabsItem);
 Vue.component("g-tabs-pane", TabsPane);
 Vue.component("g-popover", Popover);
+Vue.component("g-collapse", Collapse);
+Vue.component("g-collapse-item", CollapseItem);
 
 new Vue({
   el: "#app",
