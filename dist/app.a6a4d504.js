@@ -14623,9 +14623,15 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "collapseItem" }, [
-    _c("div", { staticClass: "title", on: { click: _vm.toggle } }, [
-      _vm._v(_vm._s(_vm.title))
-    ]),
+    _c(
+      "div",
+      {
+        staticClass: "title",
+        attrs: { "data-name": _vm.name },
+        on: { click: _vm.toggle }
+      },
+      [_vm._v(_vm._s(_vm.title))]
+    ),
     _vm._v(" "),
     _vm.open
       ? _c(
