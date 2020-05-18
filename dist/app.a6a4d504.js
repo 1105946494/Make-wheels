@@ -14445,6 +14445,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _vue = _interopRequireDefault(require("vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -14452,7 +14457,25 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: "Collapse"
+  name: "Collapse",
+  props: {
+    single: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: function data() {
+    return {
+      eventBus: new _vue.default()
+    };
+  },
+  provide: function provide() {
+    if (this.single) {
+      return {
+        eventBus: this.eventBus
+      };
+    }
+  }
 };
 exports.default = _default;
         var $1d7259 = exports.default || module.exports;
@@ -14502,7 +14525,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/collapse-item.vue":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/collapse-item.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14530,6 +14553,29 @@ var _default = {
     return {
       open: false
     };
+  },
+  inject: ["eventBus"],
+  mounted: function mounted() {
+    var _this = this;
+
+    this.eventBus && this.eventBus.$on("update:selected", function (vm) {
+      if (vm !== _this) {
+        _this.close();
+      }
+    });
+  },
+  methods: {
+    toggle: function toggle() {
+      if (this.open) {
+        this.open = false;
+      } else {
+        this.open = true;
+        this.eventBus && this.eventBus.$emit("update:selected", this);
+      }
+    },
+    close: function close() {
+      this.open = false;
+    }
   }
 };
 exports.default = _default;
@@ -14546,18 +14592,9 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "collapseItem" }, [
-    _c(
-      "div",
-      {
-        staticClass: "title",
-        on: {
-          click: function($event) {
-            _vm.open = !_vm.open
-          }
-        }
-      },
-      [_vm._v(_vm._s(_vm.title))]
-    ),
+    _c("div", { staticClass: "title", on: { click: _vm.toggle } }, [
+      _vm._v(_vm._s(_vm.title))
+    ]),
     _vm._v(" "),
     _vm.open
       ? _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
