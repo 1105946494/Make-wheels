@@ -14464,7 +14464,7 @@ var _default = {
       default: false
     },
     selected: {
-      type: String
+      type: Array
     }
   },
   data: function data() {
@@ -14481,8 +14481,27 @@ var _default = {
     var _this = this;
 
     this.eventBus.$emit("update:selected", this.selected);
-    this.eventBus.$on("update:selected", function (name) {
-      _this.$emit("update:selected", name);
+    this.eventBus.$on("update:addSelected", function (name) {
+      var selectedCopy = JSON.parse(JSON.stringify(_this.selected));
+
+      if (_this.single) {
+        selectedCopy = [name];
+      } else {
+        selectedCopy.push(name);
+      }
+
+      _this.eventBus.$emit("update:selected", selectedCopy);
+
+      _this.$emit("update:selected", selectedCopy);
+    });
+    this.eventBus.$on("update:removeSelected", function (name) {
+      var selectedCopy = JSON.parse(JSON.stringify(_this.selected));
+      var index = selectedCopy.indexOf(name);
+      selectedCopy.splice(index, 1);
+
+      _this.eventBus.$emit("update:selected", selectedCopy);
+
+      _this.$emit("update:selected", selectedCopy);
     });
   }
 };
@@ -14571,26 +14590,22 @@ var _default = {
   mounted: function mounted() {
     var _this = this;
 
-    this.eventBus && this.eventBus.$on("update:selected", function (name) {
-      if (name !== _this.name) {
-        _this.close();
+    this.eventBus && this.eventBus.$on("update:selected", function (names) {
+      if (names.indexOf(_this.name) >= 0) {
+        _this.open = true;
+      } else {
+        _this.open = false;
       }
     });
   },
   methods: {
     toggle: function toggle() {
       if (this.open) {
-        this.open = false;
+        this.eventBus && this.eventBus.$emit("update:removeSelected", this.name);
       } else {
         this.open = true;
-        this.eventBus && this.eventBus.$emit("update:selected", this.name);
+        this.eventBus && this.eventBus.$emit("update:addSelected", this.name);
       }
-    },
-    close: function close() {
-      this.open = false;
-    },
-    show: function show() {
-      this.open = true;
     }
   }
 };
@@ -14746,7 +14761,7 @@ _vue.default.component("g-collapse-item", _collapseItem.default);
 new _vue.default({
   el: "#app",
   data: {
-    selectedTab: "2"
+    selectedTab: ["2", "1"]
   },
   methods: {
     yyy: function yyy() {
