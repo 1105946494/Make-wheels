@@ -12566,9 +12566,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   name: "Button",
-  //   props: ["icon", "iconPosition"],
   components: {
     "g-icon": _icon.default
   },
@@ -14727,47 +14730,47 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var h = _vue.default;
 
-_vue.default.component("g-button", _button.default);
+_vue.default.component("j-button", _button.default);
 
-_vue.default.component("g-icon", _icon.default);
+_vue.default.component("j-icon", _icon.default);
 
-_vue.default.component("g-button-group", _buttonGroup.default);
+_vue.default.component("j-button-group", _buttonGroup.default);
 
-_vue.default.component("g-input", _input.default);
+_vue.default.component("j-input", _input.default);
 
-_vue.default.component("g-row", _row.default);
+_vue.default.component("j-row", _row.default);
 
-_vue.default.component("g-col", _col.default);
+_vue.default.component("j-col", _col.default);
 
-_vue.default.component("g-layout", _layout.default);
+_vue.default.component("j-layout", _layout.default);
 
-_vue.default.component("g-header", _header.default);
+_vue.default.component("j-header", _header.default);
 
-_vue.default.component("g-content", _content.default);
+_vue.default.component("j-content", _content.default);
 
-_vue.default.component("g-footer", _footer.default);
+_vue.default.component("j-footer", _footer.default);
 
-_vue.default.component("g-sider", _sider.default);
+_vue.default.component("j-sider", _sider.default);
 
-_vue.default.component("g-toast", _toast.default);
+_vue.default.component("j-toast", _toast.default);
 
 _vue.default.use(_plugin.default);
 
-_vue.default.component("g-tabs", _tabs.default);
+_vue.default.component("j-tabs", _tabs.default);
 
-_vue.default.component("g-tabs-body", _tabsBody.default);
+_vue.default.component("j-tabs-body", _tabsBody.default);
 
-_vue.default.component("g-tabs-head", _tabsHead.default);
+_vue.default.component("j-tabs-head", _tabsHead.default);
 
-_vue.default.component("g-tabs-item", _tabsItem.default);
+_vue.default.component("j-tabs-item", _tabsItem.default);
 
-_vue.default.component("g-tabs-pane", _tabsPane.default);
+_vue.default.component("j-tabs-pane", _tabsPane.default);
 
-_vue.default.component("g-popover", _popover.default);
+_vue.default.component("j-popover", _popover.default);
 
-_vue.default.component("g-collapse", _collapse.default);
+_vue.default.component("j-collapse", _collapse.default);
 
-_vue.default.component("g-collapse-item", _collapseItem.default);
+_vue.default.component("j-collapse-item", _collapseItem.default);
 
 new _vue.default({
   el: "#app",
@@ -14830,7 +14833,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63991" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60215" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
