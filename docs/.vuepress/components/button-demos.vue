@@ -5,11 +5,7 @@
     <j-button :loading="true">默认按钮</j-button>
     <j-button disabled>默认按钮</j-button>
 
-    <pre>
-        <code>
-        {{content}}
-        </code>
-    </pre>
+    <pre><code>{{content}}</code></pre>
   </div>
 </template>
 
@@ -18,17 +14,19 @@ import Button from "../../../src/button";
 
 export default {
   components: {
-    "j-button": Button,
+    "j-button": Button
   },
   data() {
     return {
       content: `
-    <j-button>默认按钮</j-button>
-    <j-button icon="ishezhi">默认按钮</j-button>
-    <j-button :loading="true">默认按钮</j-button>
-    <j-button disabled>默认按钮</j-button>
-          `,
+     <j-button>默认按钮</j-button>
+     <j-button icon="ishezhi">默认按钮</j-button>
+     <j-button :loading="true">默认按钮</j-button>
+     <j-button disabled>默认按钮</j-button>
+          `
+        .replace(/\t+| +/g, "")
+        .trim()
     };
-  },
+  }
 };
 </script>
