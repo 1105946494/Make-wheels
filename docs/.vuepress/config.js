@@ -2,30 +2,24 @@ module.exports = {
   base: "/Make-wheels/",
   title: "简造 UI",
   description: "一个好用的UI框架",
-  themeConfig: {
-    nav: [
-      { text: "主页", link: "/" },
-      { text: "文档", link: "/guide/" },
-      { text: "交流", link: "https://google.com" },
-    ],
-    sidebar: [
-      {
-        title: "入门",
-        children: ["/install/", "/get-started/"],
-      },
-      {
-        title: "组件",
-        children: [
-          "/components/button",
-          "/components/tabs",
-          "/components/input",
-          "/components/grid",
-          "/components/layout",
-          "/components/toast",
-          "/components/popover",
-          "/components/collapse",
-        ],
-      },
-    ],
+  dest: "./dist",
+  head: [["link", { rel: "icon", href: "/img/logo.png" }]],
+  markdown: {
+    lineNumbers: true,
   },
+  themeConfig: {
+    nav: require("./nav"),
+    sidebar: require("./sidebar"),
+  },
+  sidebarDepth: 2,
+  lastUpdated: "Last Updated",
+  searchMaxSuggestoins: 10,
+  serviceWorker: {
+    updatePopup: {
+      message: "有新的内容.",
+      buttonText: "更新",
+    },
+  },
+  editLinks: true,
+  editLinkText: "在 GitHub 上编辑此页 ！",
 };
