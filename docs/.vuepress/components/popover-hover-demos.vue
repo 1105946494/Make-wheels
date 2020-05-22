@@ -1,18 +1,18 @@
 <template>
   <div>
-    <j-popover>
+    <j-popover trigger="hover">
       <j-button>上方弹出</j-button>
       <template slot="content">弹出内容</template>
     </j-popover>
-    <j-popover position="bottom">
+    <j-popover position="bottom" trigger="hover">
       <j-button>下方弹出</j-button>
       <template slot="content">弹出内容</template>
     </j-popover>
-    <j-popover position="left">
+    <j-popover position="left" trigger="hover">
       <j-button>左边弹出</j-button>
       <template slot="content">弹出内容</template>
     </j-popover>
-    <j-popover position="right">
+    <j-popover position="right" trigger="hover">
       <j-button>右边弹出</j-button>
       <template slot="content">弹出内容</template>
     </j-popover>
@@ -29,3 +29,4 @@ export default {
   }
 };
 </script>
+

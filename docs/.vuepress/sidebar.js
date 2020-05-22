@@ -9,7 +9,6 @@ module.exports = [
     collapsable: true,
     children: [
       "/components/button",
-      "/components/tabs",
       "/components/input",
       "/components/grid",
       "/components/layout",

@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: "GuluToast",
+  name: "Toast",
   props: {
     autoClose: {
       type: [Boolean, Number],
@@ -118,8 +118,10 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   transform: translateX(-50%);
   $animation-duration: 0.5s;
   &.position-top {
+    z-index: 30;
     top: 0;
     .toast {
+      z-index: 30;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
       animation: slide-down $animation-duration;
@@ -128,6 +130,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   &.position-bottom {
     bottom: 0;
     .toast {
+      z-index: 30;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       animation: slide-up $animation-duration;
@@ -137,11 +140,13 @@ $toast-bg: rgba(0, 0, 0, 0.75);
     transform: translateX(-50%) translateY(-50%);
     top: 50%;
     .toast {
+      z-index: 30;
       animation: fade-in $animation-duration;
     }
   }
 }
 .toast {
+  z-index: 30;
   animation: fade-in 1s;
   font-size: $font-size;
   min-height: $toast-min-height;

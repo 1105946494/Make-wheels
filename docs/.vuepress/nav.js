@@ -38,10 +38,6 @@ module.exports = [
             link: "/components/popover",
           },
           {
-            text: "Tabs-标签",
-            link: "/components/tabs",
-          },
-          {
             text: "Toast-弹出提示(吐司)",
             link: "/components/toast",
           },

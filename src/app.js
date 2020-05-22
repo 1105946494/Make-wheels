@@ -48,8 +48,8 @@ Vue.component("j-collapse-item", CollapseItem);
 
 new Vue({
   el: "#app",
-  data: {
-    selectedTab: ["2", "1"],
+  data() {
+    return { selectedTab: ["2", "1"], selected: "1" };
   },
   methods: {
     yyy() {

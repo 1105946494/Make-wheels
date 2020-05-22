@@ -4,11 +4,15 @@ title: collapse-折叠面板
 
 # 折叠面板
 
-预览
+**预览**
 
 <ClientOnly>
 <collapse-demos></collapse-demos>
 </ClientOnly>
+
+---
+
+---
 
 ## 代码演示
 
