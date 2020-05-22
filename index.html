@@ -39,8 +39,19 @@
       }
     </style>
 
-    <div id="app" style="padding: 100px;">
-      <j-button icon="ishezhi">按钮</j-button>
+    <div id="app">
+      <j-input></j-input>
+      <j-input value="警告" error="警告"></j-input>
+      <j-input value="中文"></j-input>
+      <j-input value="不可选" disabled></j-input>
+      <j-input value="只读" readonly></j-input>
+      <g-input v-model="value"></g-input>
+      <div>
+        value: {{value}}
+      </div>
+      <!-- data:{
+        value: '1'
+      } -->
     </div>
     <script src="./src/app.js"></script>
   </body>

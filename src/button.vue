@@ -1,11 +1,7 @@
 <template>
-  <button
-    class="g-button"
-    :class="{ [`icon-${iconPosition}`]: true }"
-    @click="$emit('click')"
-  >
-    <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
-    <g-icon class="loading icon" v-if="loading" name="ijiazai"></g-icon>
+  <button class="j-button" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
+    <j-icon class="icon" v-if="icon && !loading" :name="icon"></j-icon>
+    <j-icon class="loading icon" v-if="loading" name="ijiazai"></j-icon>
     <div class="content">
       <slot />
     </div>
@@ -17,22 +13,22 @@ import Icon from "./icon";
 export default {
   name: "Button",
   components: {
-    "g-icon": Icon,
+    "j-icon": Icon
   },
   props: {
     icon: {},
     loading: {
       type: Boolean,
-      default: false,
+      default: false
     },
     iconPosition: {
       type: String,
       default: "left",
       validator(value) {
         return value === "left" || value === "right";
-      },
-    },
-  },
+      }
+    }
+  }
 };
 </script>
 
@@ -58,7 +54,7 @@ $border-color-hover: #666;
   animation: spin 2s infinite linear;
 }
 
-.g-button {
+.j-button {
   font-size: $font-size;
   height: $button-height;
   padding: 0 1em;

@@ -1,9 +1,11 @@
 <template>
   <div class="collapseItem">
     <div class="title" @click="toggle" :data-name="name">{{title}}</div>
-    <div class="content" ref="content" v-if="open">
-      <slot></slot>
-    </div>
+    <transition name="fade" mode="out-in">
+      <div class="content" ref="content" v-if="open">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -53,6 +55,16 @@ export default {
 <style scoped lang="scss">
 $grey: #ddd;
 $border-radius: 4px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+  max-height: 40px;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  max-height: 0px;
+}
 .collapseItem {
   > .title {
     border: 1px solid $grey;
@@ -78,7 +90,9 @@ $border-radius: 4px;
     }
   }
   > .content {
-    padding: 8px;
+    line-height: 40px;
+    padding: 0 8px;
+    height: 40px;
   }
 }
 </style>
