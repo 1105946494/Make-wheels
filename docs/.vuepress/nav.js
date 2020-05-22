@@ -7,7 +7,7 @@ module.exports = [
         text: "入门",
         items: [
           { text: "安装", link: "/install/" },
-          { text: "入门", link: "/get-started/" },
+          { text: "快速上手", link: "/get-started/" },
         ],
       },
       {
@@ -18,28 +18,28 @@ module.exports = [
             link: "/components/button",
           },
           {
-            text: "collapse-折叠面板",
-            link: "/components/collapse",
+            text: "Input-输入框",
+            link: "/components/input",
           },
           {
             text: "Grid-网格",
             link: "/components/grid",
           },
           {
-            text: "Input-输入框",
-            link: "/components/input",
-          },
-          {
             text: "Layout-布局",
             link: "/components/layout",
+          },
+          {
+            text: "Toast-弹出提示(吐司)",
+            link: "/components/toast",
           },
           {
             text: "Popover-弹出层",
             link: "/components/popover",
           },
           {
-            text: "Toast-弹出提示(吐司)",
-            link: "/components/toast",
+            text: "collapse-折叠面板",
+            link: "/components/collapse",
           },
         ],
       },
