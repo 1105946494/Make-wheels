@@ -21,6 +21,7 @@ title: collapse-折叠面板
   <j-collapse-item title="标题1" name="1">内容1</j-collapse-item>
   <j-collapse-item title="标题2" name="2">内容2</j-collapse-item>
   <j-collapse-item title="标题3" name="3">内容3</j-collapse-item>
+  <j-collapse-item title="标题4" name="4">内容4</j-collapse-item>
 </j-collapse>
 {{selectedTab}}
 ```

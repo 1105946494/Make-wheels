@@ -1,5 +1,5 @@
 <template>
-  <svg class="g-icon">
+  <svg class="j-icon">
     <use :xlink:href="`#${name}`" />
   </svg>
 </template>
@@ -8,12 +8,12 @@
 import "./svg";
 export default {
   name: "Icon",
-  props: ["name"]
+  props: ["name"],
 };
 </script>
 
 <style lang="scss" scoped>
-.g-icon {
+.j-icon {
   width: 1em;
   height: 1em;
 }

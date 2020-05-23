@@ -41,18 +41,11 @@
 
     <div id="app">
       <div>
-        <j-tabs :selected="selected">
-          <j-tabs-head>
-            <j-tabs-item name="1">1</j-tabs-item>
-            <j-tabs-item name="2">2</j-tabs-item>
-            <j-tabs-item name="3" disabled>3</j-tabs-item>
-          </j-tabs-head>
-          <j-tabs-body>
-            <j-tabs-pane name="1">content 1</j-tabs-pane>
-            <j-tabs-pane name="2">content 2</j-tabs-pane>
-            <j-tabs-pane name="3">content 3</j-tabs-pane>
-          </j-tabs-body>
-        </j-tabs>
+        <j-button-group>
+          <j-button icon="izuo">上一页</j-button>
+          <j-button>更多</j-button>
+          <j-button icon="iyou" icon-position="right">下一页</j-button>
+        </j-button-group>
       </div>
     </div>
     <script src="./src/app.js"></script>
