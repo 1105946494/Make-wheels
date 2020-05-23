@@ -24,7 +24,7 @@ title: Button-按钮
 
 # 按钮组合
 
-可以将多个 **button** 放入 **button-group** 容器中，通过 **icon-position** 属性调整 **icon** 的位置
+可以将多个<b>button</b>放入<b>button-group</b>容器中，通过 <b>icon-position</b> 属性调整 <b>icon</b> 的位置
 
 **预览**
 

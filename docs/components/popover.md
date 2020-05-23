@@ -4,7 +4,9 @@ title: Popover-弹出层
 
 # 弹出层
 
-## 支持 HTML
+点击/鼠标移入元素，弹出气泡式的卡片浮层。
+
+## Click 触发
 
 **预览**
 
@@ -59,5 +61,24 @@ title: Popover-弹出层
 <j-popover position="right" trigger="hover">
   <j-button>右边弹出</j-button>
   <template slot="content">弹出内容</template>
+</j-popover>
+```
+
+## 支持 HTML，设置内部关闭
+
+**预览**
+
+<ClientOnly>
+<popover-close-demos></popover-close-demos>
+</ClientOnly>
+
+## 代码演示
+
+```html
+<j-popover position="bottom">
+  <j-button>点我</j-button>
+  <template slot="content" slot-scope="{close}"
+    ><j-button @click="close">close</j-button></template
+  >
 </j-popover>
 ```

@@ -10,7 +10,7 @@
 
 <script>
 import Button from "../../../src/button";
-import Buttongroup from "./../../src/button-group";
+import Buttongroup from "../../../src/button-group";
 
 export default {
   components: {
