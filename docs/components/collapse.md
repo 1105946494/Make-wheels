@@ -27,17 +27,6 @@ title: collapse-折叠面板
   <j-collapse-item title="标题3" name="3">内容3</j-collapse-item>
   <j-collapse-item title="标题4" name="4">内容4</j-collapse-item>
 </j-collapse>
-{{selectedTab}}
-```
-
-```js
-export default {
-  data() {
-    return {
-      selectedTab: ["等待选中"],
-    };
-  },
-};
 ```
 
 ## 设置 single
@@ -63,15 +52,4 @@ export default {
   <j-collapse-item title="标题3" name="3">内容3</j-collapse-item>
   <j-collapse-item title="标题4" name="4">内容4</j-collapse-item>
 </j-collapse>
-{{selectedTab}}
-```
-
-```js
-export default {
-  data() {
-    return {
-      selectedTab: ["等待选中"],
-    };
-  },
-};
 ```
