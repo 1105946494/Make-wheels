@@ -7,6 +7,7 @@
       <j-collapse-item title="标题4" name="4">内容4</j-collapse-item>
     </j-collapse>
     <hr />
+    {{selectedTab}}
   </div>
 </template>
 
@@ -15,6 +16,11 @@ import Collapse from "../../../src/collapse.vue";
 import CollapseItem from "../../../src/collapse-item";
 
 export default {
+  data() {
+    return {
+      selectedTab: []
+    };
+  },
   components: {
     "j-collapse": Collapse,
     "j-collapse-item": CollapseItem
